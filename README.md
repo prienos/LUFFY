@@ -55,11 +55,6 @@ LUFFY/
 - **Data Processing**: Batch dimension operations and tensor reshaping
 
 ### 📝 Complete TODO List
-
-- [ ] **luffy/deepscaler/utils.py:45** - Implement OpenAI API client initialization
-- [ ] **luffy/deepscaler/utils.py:46** - Add proper authentication handling
-- [ ] **luffy/deepscaler/utils.py:47** - Implement exponential backoff retry logic for rate limits
-- [ ] **luffy/deepscaler/utils.py:48** - Add comprehensive error handling for different API errors
 - [ ] **luffy/deepscaler/utils.py:49** - Implement response parsing and validation
 - [ ] **luffy/deepscaler/utils.py:50** - Add logging for API calls and errors
 - [ ] **luffy/deepscaler/utils.py:51** - Support batch processing for multiple prompts
@@ -110,22 +105,12 @@ LUFFY/
 - [ ] **luffy/verl/verl/models/llama/megatron/modeling_llama_megatron.py:588** - for better performance, the sp padding should be removed at each layer. Not sure the performance gap
 - [ ] **luffy/verl/verl/models/registry.py:21** - (sgm): HF may supported more than listed here, we should add more after testing
 - [ ] **luffy/verl/verl/models/transformers/llama.py:88** - These transpose are quite inefficient but Flash Attention requires the layout [batch_size, sequence_length, num_heads, head_dim]. We would need to refactor the KV cache
-- [ ] **luffy/verl/verl/protocol.py:114** - Implement batch dimension folding for efficient processing
-- [ ] **luffy/verl/verl/protocol.py:115** - Add validation for batch size compatibility
-- [ ] **luffy/verl/verl/protocol.py:116** - Handle edge cases where batch_size is not divisible by new_batch_size
-- [ ] **luffy/verl/verl/protocol.py:117** - Optimize memory usage during tensor reshaping
-- [ ] **luffy/verl/verl/protocol.py:118** - Add support for different tensor types and shapes
-- [ ] **luffy/verl/verl/protocol.py:131** - Implement batch dimension unfolding functionality
-- [ ] **luffy/verl/verl/protocol.py:132** - Add support for variable batch dimensions
-- [ ] **luffy/verl/verl/protocol.py:133** - Optimize tensor view operations for performance
-- [ ] **luffy/verl/verl/protocol.py:134** - Handle non-tensor batch data reshaping properly
-- [ ] **luffy/verl/verl/protocol.py:135** - Add error handling for invalid batch dimensions
 - [ ] **luffy/verl/verl/protocol.py:156** - (zhangchi.usc1992) add consistency check
 - [ ] **luffy/verl/verl/protocol.py:252** - we can actually lift this restriction if needed
 - [ ] **luffy/verl/verl/protocol.py:338** - (zhangchi.usc1992) whether to copy
 - [ ] **luffy/verl/verl/single_controller/ray/base.py:439** - create a class with customizable name
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/arg_utils.py:64** - (shengguangming): delete the unused args
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/arg_utils.py:147** - (woosuk): Support fine-grained seeds (e.g., seed per request).
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_vllm_v_0_3_1/arg_utils.py:147** - (woosuk): Support fine-grained seeds (e.g., seed per request).
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:237** - (shengguangming): maybe we can hack the autoregressive logics without only apply post process for better performance
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:241** - (sgm): we can optimize it by making the dataloader yield List[int] without padding.
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:257** - (shengguangming): can be optimzied by rewrite the Sampler._get_logprobs() logits
@@ -156,7 +141,7 @@ LUFFY/
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:143** - (shengguangming): maybe we can choose init here or from arguments
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:145** - check tokenizer class
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:153** - don't know what's the usage
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:228** - (sgm): add for verl but we may not tokenizer in Rollout
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_vllm_v_0_4_2/llm_engine_sp.py:228** - (sgm): add for verl but we may not tokenizer in Rollout
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:237** - check whether we should rebuild the CUDAGraph every iter when offload/load KVCache
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/megatron_weight_loaders.py:67** - check megatron
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/megatron_weight_loaders.py:254** - need to implement a general way to deal with prefix
@@ -197,7 +182,7 @@ LUFFY/
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:249** - check why True is not work in Ray trainer
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:253** - init using device mesh (not support hybrid engine now)
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/spmd_gpu_executor.py:65** - (sgm): verl not support speculative decode now
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/spmd_gpu_executor.py:243** - (sgm): not implemented async executor yet
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_vllm_v_0_5_4/spmd_gpu_executor.py:243** - (sgm): not implemented async executor yet
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/tokenizer.py:61** - (sgm): the lora tokenizer is also passed, but may be different
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/worker.py:29** - (sgm): check why vllm has similar file in vllm.model_executor.parallel_utils.parallel_state
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/worker.py:84** - we don't need driver
@@ -278,7 +263,7 @@ LUFFY/
 - [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:82** - offload FSDP model weights
 - [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:113** - Current impl doesn't consider FSDP with torch micro-dp
 - [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:122** - Current impl doesn't consider FSDP with torch micro-dp
-- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:130** - shall we build a micro_dp group for vllm when integrating with vLLM?
+- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:130** - shall we build a micro_dp group for vllm when integrating with the vLLM?
 - [ ] **luffy/verl/verl/workers/sharding_manager/megatron_vllm.py:76** - after binding to the memory buffer, we can load the checkpoint here
 - [ ] **luffy/verl/verl/workers/sharding_manager/megatron_vllm.py:253** - (sgm): this may not be true for FSDP -> vLLM
 - [ ] **luffy/verl/verl/workers/sharding_manager/megatron_vllm.py:323** - (zhangchi.usc1992) We can consider copy non-tp weight to another infer buffer.
@@ -289,4 +274,3 @@ LUFFY/
 2. Implement the functionality
 3. Test your implementation
 4. Update this README when TODOs are completed
-
